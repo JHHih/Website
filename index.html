@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunaris</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background: #0f0f1a;
+            color: #fff;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+        }
+
+        .title-icon {
+            color: #8962e8;
+        }
+
+        .discord-btn {
+            background: linear-gradient(135deg, #8962e8 0%, #5e45d8 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s;
+        }
+
+        .generator-section, .tutorial-section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .option-card, .tutorial-card {
+            padding: 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            transition: transform 0.2s;
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .option-card i, .tutorial-card i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .link-generator {
+            background: linear-gradient(135deg, rgba(14, 126, 255, 0.7) 0%, rgba(58, 123, 213, 0.7) 100%);
+            border: 2px solid rgba(14, 126, 255, 0.3);
+        }
+
+        .backup-site {
+            background: linear-gradient(135deg, rgba(14, 126, 255, 0.7) 0%, rgba(137, 98, 232, 0.7) 100%);
+            border: 2px solid rgba(14, 126, 255, 0.3);
+        }
+
+        .video-tutorials {
+            background: linear-gradient(135deg, rgba(137, 98, 232, 0.7) 0%, rgba(94, 69, 216, 0.7) 100%);
+            border: 2px solid rgba(137, 98, 232, 0.3);
+            position: relative;
+        }
+
+        .beaming-methods {
+            background: linear-gradient(135deg, rgba(14, 126, 255, 0.7) 0%, rgba(58, 123, 213, 0.7) 100%);
+            border: 2px solid rgba(14, 126, 255, 0.3);
+            position: relative;
+        }
+
+        .view-all {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 0.8rem;
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+        }
+
+        .view-all i {
+            font-size: 0.8rem;
+            margin-left: 4px;
+        }
+
+        footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .message-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(137, 98, 232, 0.9);
+            padding: 15px 25px;
+            border-radius: 8px;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-moon title-icon"></i>Lunaris</h1>
+            <a href="https://discord.gg/your-discord" class="discord-btn">
+                <i class="fab fa-discord"></i> Join Discord
+            </a>
+        </header>
+
+        <section class="generator-section">
+            <h2><i class="fas fa-tools"></i> Tools</h2>
+            <div class="options">
+                <a href="#" class="option-card link-generator">
+                    <i class="fas fa-link"></i>
+                    <p>Link Generator</p>
+                </a>
+                <a href="#" class="option-card backup-site">
+                    <i class="fas fa-server"></i>
+                    <p>Backup Site</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="tutorial-section">
+            <h2><i class="fas fa-graduation-cap"></i> Tutorials</h2>
+            <div class="options">
+                <a href="#" class="tutorial-card video-tutorials">
+                    <i class="fas fa-video"></i>
+                    <p>Video Tutorials</p>
+                    <span class="view-all">View All <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="#" class="tutorial-card beaming-methods">
+                    <i class="fas fa-book"></i>
+                    <p>Methods</p>
+                    <span class="view-all">View All <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <div class="copyright">
+                © 2025 Lunaris - All Rights Reserved
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const linkGeneratorBtn = document.querySelector('.link-generator');
+            if (linkGeneratorBtn) {
+                linkGeneratorBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showMessage("Link Generator functionality coming soon");
+                });
+            }
+
+            function showMessage(message) {
+                const messageContainer = document.createElement('div');
+                messageContainer.className = 'message-container';
+                const messageText = document.createElement('p');
+                messageText.className = 'message';
+                messageText.textContent = message;
+                messageContainer.appendChild(messageText);
+                document.querySelector('.container').appendChild(messageContainer);
+                
+                setTimeout(() => {
+                    messageContainer.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+                
+                setTimeout(() => {
+                    messageContainer.remove();
+                }, 3000);
+            }
+
+            const buttons = document.querySelectorAll('a.option-card, a.tutorial-card, .discord-btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
