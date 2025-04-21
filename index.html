@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +14,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            background: #0f0f1a;
+            background: linear-gradient(135deg, #0033cc 0%, #6600cc 100%);
             color: #fff;
             min-height: 100vh;
             line-height: 1.6;
@@ -34,136 +33,119 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
             padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
             color: #fff;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
         }
 
         .title-icon {
-            color: #8962e8;
+            color: #fff;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+            animation: float 3s ease-in-out infinite;
         }
 
         .discord-btn {
-            background: linear-gradient(135deg, #8962e8 0%, #5e45d8 100%);
+            background: rgba(255, 255, 255, 0.1);
             color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
+            padding: 12px 25px;
+            border-radius: 12px;
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 8px;
-            transition: transform 0.2s;
+            gap: 10px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        .generator-section, .tutorial-section {
-            margin-bottom: 40px;
+        .discord-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .section {
+            margin-bottom: 60px;
         }
 
         h2 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            margin-bottom: 30px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.9);
         }
 
-        .options {
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
-        .option-card, .tutorial-card {
-            padding: 20px;
-            border-radius: 12px;
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
             text-decoration: none;
             color: white;
             text-align: center;
-            transition: transform 0.2s;
-            min-height: 150px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
+            gap: 15px;
         }
 
-        .option-card i, .tutorial-card i {
-            font-size: 2rem;
+        .card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
             margin-bottom: 10px;
         }
 
-        .link-generator {
-            background: linear-gradient(135deg, rgba(14, 126, 255, 0.7) 0%, rgba(58, 123, 213, 0.7) 100%);
-            border: 2px solid rgba(14, 126, 255, 0.3);
-        }
-
-        .backup-site {
-            background: linear-gradient(135deg, rgba(14, 126, 255, 0.7) 0%, rgba(137, 98, 232, 0.7) 100%);
-            border: 2px solid rgba(14, 126, 255, 0.3);
-        }
-
-        .video-tutorials {
-            background: linear-gradient(135deg, rgba(137, 98, 232, 0.7) 0%, rgba(94, 69, 216, 0.7) 100%);
-            border: 2px solid rgba(137, 98, 232, 0.3);
-            position: relative;
-        }
-
-        .beaming-methods {
-            background: linear-gradient(135deg, rgba(14, 126, 255, 0.7) 0%, rgba(58, 123, 213, 0.7) 100%);
-            border: 2px solid rgba(14, 126, 255, 0.3);
-            position: relative;
-        }
-
-        .view-all {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            font-size: 0.8rem;
-            font-weight: normal;
-            display: flex;
-            align-items: center;
-        }
-
-        .view-all i {
-            font-size: 0.8rem;
-            margin-left: 4px;
+        .card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
         }
 
         footer {
             margin-top: auto;
-            display: flex;
-            justify-content: center;
+            text-align: center;
             padding: 20px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
         }
 
-        .message-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(137, 98, 232, 0.9);
-            padding: 15px 25px;
-            border-radius: 8px;
-            animation: slideIn 0.3s ease-out;
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
-        @keyframes slideIn {
-            from {
-                transform: translateY(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+        @media (max-width: 768px) {
+            .container { padding: 15px; }
+            h1 { font-size: 2.5rem; }
+            .grid { gap: 15px; }
         }
     </style>
 </head>
@@ -171,86 +153,46 @@
     <div class="container">
         <header>
             <h1><i class="fas fa-moon title-icon"></i>Lunaris</h1>
-            <a href="https://discord.gg/your-discord" class="discord-btn">
+            <a href="https://discord.gg/ZX49z9T7jB" class="discord-btn" target="_blank">
                 <i class="fab fa-discord"></i> Join Discord
             </a>
         </header>
 
-        <section class="generator-section">
+        <section class="section">
             <h2><i class="fas fa-tools"></i> Tools</h2>
-            <div class="options">
-                <a href="#" class="option-card link-generator">
+            <div class="grid">
+                <a href="https://app.genn.lu/auth/lunaris" class="card" target="_blank">
                     <i class="fas fa-link"></i>
-                    <p>Link Generator</p>
+                    <h3>Link Generator</h3>
+                    <p>Generate custom links for your needs</p>
                 </a>
-                <a href="#" class="option-card backup-site">
+                <a href="https://discord.gg/ZX49z9T7jB" class="card" target="_blank">
                     <i class="fas fa-server"></i>
-                    <p>Backup Site</p>
+                    <h3>Backup Server</h3>
+                    <p>Join our backup community server</p>
                 </a>
             </div>
         </section>
 
-        <section class="tutorial-section">
-            <h2><i class="fas fa-graduation-cap"></i> Tutorials</h2>
-            <div class="options">
-                <a href="#" class="tutorial-card video-tutorials">
+        <section class="section">
+            <h2><i class="fas fa-graduation-cap"></i> Resources</h2>
+            <div class="grid">
+                <a href="https://discord.gg/VCWK6qJhXb" class="card" target="_blank">
                     <i class="fas fa-video"></i>
-                    <p>Video Tutorials</p>
-                    <span class="view-all">View All <i class="fas fa-arrow-right"></i></span>
+                    <h3>Video Tutorials</h3>
+                    <p>Learn through comprehensive video guides</p>
                 </a>
-                <a href="#" class="tutorial-card beaming-methods">
+                <a href="https://discord.gg/jHmT6jTzZ9" class="card" target="_blank">
                     <i class="fas fa-book"></i>
-                    <p>Methods</p>
-                    <span class="view-all">View All <i class="fas fa-arrow-right"></i></span>
+                    <h3>Methods</h3>
+                    <p>Access advanced techniques and methods</p>
                 </a>
             </div>
         </section>
 
         <footer>
-            <div class="copyright">
-                © 2025 Lunaris - All Rights Reserved
-            </div>
+            <div class="copyright">© 2025 Lunaris - All Rights Reserved</div>
         </footer>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const linkGeneratorBtn = document.querySelector('.link-generator');
-            if (linkGeneratorBtn) {
-                linkGeneratorBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    showMessage("Link Generator functionality coming soon");
-                });
-            }
-
-            function showMessage(message) {
-                const messageContainer = document.createElement('div');
-                messageContainer.className = 'message-container';
-                const messageText = document.createElement('p');
-                messageText.className = 'message';
-                messageText.textContent = message;
-                messageContainer.appendChild(messageText);
-                document.querySelector('.container').appendChild(messageContainer);
-                
-                setTimeout(() => {
-                    messageContainer.scrollIntoView({ behavior: 'smooth' });
-                }, 100);
-                
-                setTimeout(() => {
-                    messageContainer.remove();
-                }, 3000);
-            }
-
-            const buttons = document.querySelectorAll('a.option-card, a.tutorial-card, .discord-btn');
-            buttons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    this.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        this.style.transform = '';
-                    }, 150);
-                });
-            });
-        });
-    </script>
 </body>
 </html>
